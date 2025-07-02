@@ -114,8 +114,8 @@ def create_df_from_file(file_path):
  result_df['block_number'] = result_df['block_number'].str.replace("block_", "").str.replace(".json", "")
  result_df = pd.concat([result_df['block_number'], result_df.drop(columns=['block_number'])], axis=1)
  return result_df
-input_folder = "/home/e/pbs_data/"  # A mappa, ahol a fájlok találhatóak
-output_file = "output/12s_auctions.csv"  # Az összesített CSV fájl neve
+input_folder = "/home/e/pbs_data/"  # This should point to the folder where the raw PBS data is extracted
+output_file = "output/12s_auctions.csv"  # This should point to the folder where you want the output to be written
 all_files = [f for f in os.listdir(input_folder) if f.endswith(".json")]
 all_results = []
 files_to_process = all_files[:150000]
